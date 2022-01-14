@@ -1,5 +1,12 @@
 #include "Point2D.hpp"
+#pragma once
+using namespace std;
 
+template <typename T,S>
+class Polygone;
+
+template <typename T,S>
+ostream& operator<<(ostream&, Polygone<T,S> const &);
 /*
 - sommets : Vector<Point2D<T>>
 + Polygone( )
@@ -12,8 +19,8 @@
 
 template <typename T>
 class Polygone {
-    protected:
-        
+    private:
+        vector
 
     public:
         Polygone();
