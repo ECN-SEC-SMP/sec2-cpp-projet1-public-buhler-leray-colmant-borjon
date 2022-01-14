@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 #pragma once
 using namespace std;
 
