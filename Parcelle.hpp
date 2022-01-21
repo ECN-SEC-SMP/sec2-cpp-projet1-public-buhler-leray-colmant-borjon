@@ -14,7 +14,7 @@ class Parcelle{
         string type;
         int  num;
         string proprietaire;
-        float surface;
+        int surface;
         int surface_constructible;
         Polygone<int> forme;
 
@@ -38,7 +38,7 @@ class Parcelle{
 
     private :
 
-    void calculate_surface();
+        void calculate_surface();
 
 };
 

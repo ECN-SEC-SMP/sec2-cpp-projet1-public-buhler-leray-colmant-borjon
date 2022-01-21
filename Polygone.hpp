@@ -22,6 +22,7 @@ template <typename T>
 class Polygone {
     private:
         vector<Point2D<T>*> sommets;
+        float surface;
 
     public:
         Polygone();
@@ -89,11 +90,9 @@ void Polygone<T>::translate(T x, T y){
 template <typename T>
 ostream& operator<<(ostream &o, Polygone<T> const &p){
   o << "Polygone : ";
-  //vector<Point2D<T>*>::iterator it = begin(p.getSommets());
-  for (auto it = begin(p.getSommets()); it != end(p.getSommets()); it++)
+  for (auto& it : p.getSommets())
     {
-      o << "[" << (*it)->getX() << ":" << (*it)->getY() << "] ";
+      o << "[" << it->getX() << ":" << it->getY() << "] ";
     }
-
     return o;
 }
