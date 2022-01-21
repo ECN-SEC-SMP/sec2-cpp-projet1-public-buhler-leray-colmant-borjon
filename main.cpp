@@ -1,4 +1,5 @@
 #include "Polygone.hpp"
+#include "Parcelle.hpp"
 
 
 int main() {
@@ -13,7 +14,13 @@ int main() {
 
     Polygone<int> poly1 = Polygone<int> (vectSommets);
 
-    //cout << poly1 <<endl;
+    cout << poly1 <<endl;
+
+    poly1.translate(4, 5);
+
+    cout << poly1 <<endl;
+
+    // Parcelle parc = Parcelle(4, "Nolann", poly1);
     
     return 0;
 }

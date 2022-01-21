@@ -74,10 +74,14 @@ void Polygone<T>::addPoint(Point2D<T>* point){
 
 template <typename T>
 void Polygone<T>::translate(T x, T y){
-  for (auto it = begin(this->sommets); it != end(this->sommets); it++)
+  // for(typename std::vector<Point2D<T>*>::iterator it = std::begin(this->sommets); it != std::end(this->sommets); ++it) {
+  //   *it.setX(*it.getX() + x);
+  //     *it.setY(*it.getY() + y);
+  // }
+  for (auto& it : this->sommets)
     {
-      *it.setX(*it.getX() + x);
-      *it.setY(*it.getY() + y);
+      it->setX(it->getX() + x);
+      it->setY(it->getY() + y);
     }
 }
 
@@ -88,7 +92,8 @@ ostream& operator<<(ostream &o, Polygone<T> const &p){
   //vector<Point2D<T>*>::iterator it = begin(p.getSommets());
   for (auto it = begin(p.getSommets()); it != end(p.getSommets()); it++)
     {
-      cout << "ok";
       o << "[" << (*it)->getX() << ":" << (*it)->getY() << "] ";
     }
+
+    return o;
 }
