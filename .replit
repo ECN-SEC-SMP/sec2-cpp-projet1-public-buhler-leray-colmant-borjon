@@ -1,2 +1,4 @@
 language = "cpp"
-run = "n"
+run = "g++ -o main.out main.cpp"
+
+compil = "g++ -o main.out main.cpp"

@@ -8,7 +8,7 @@
 + getSommets( ) : Vector<Point2D<T>>
 + setSommets(Vector<Point2D<T>> listeSommets) : void + addPoint(Point2D<T>) : void
 + translate(T x, T y) : void
-*/
+
 
 template <typename T>
 class Polygone {
@@ -21,3 +21,5 @@ class Polygone {
         Polygone (Polygone <T, D> poly);
 
 };
+
+*/
