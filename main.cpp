@@ -1,26 +1,42 @@
-#include "Polygone.hpp"
-#include "Parcelle.hpp"
+#include "ZU.hpp"
+#include "ZAU.hpp"
+#include "ZA.hpp"
+#include "ZN.hpp"
 
 
 int main() {
-    Point2D<int> p1 = Point2D<int> (2,5);
-    Point2D<int> p2 = Point2D<int> (6,5);
-    Point2D<int> p3 = Point2D<int> (1,9);
+    vector<Point2D<int>*> vect1;
+    vect1.push_back(new Point2D<int> (80,0));
+    vect1.push_back(new Point2D<int> (100,0));
+    vect1.push_back(new Point2D<int> (100,100));
+    vect1.push_back(new Point2D<int> (80,100));
 
-    vector<Point2D<int>*> vectSommets;
-    vectSommets.push_back(&p1);
-    vectSommets.push_back(&p2);
-    vectSommets.push_back(&p3);
+    vector<Point2D<int>*> vect2;
+    vect2.push_back(new Point2D<int> (0,30));
+    vect2.push_back(new Point2D<int> (80,30));
+    vect2.push_back(new Point2D<int> (80,100));
+    vect2.push_back(new Point2D<int> (60,100));
 
-    Polygone<int> poly1 = Polygone<int> (vectSommets);
+    vector<Point2D<int>*> vect3;
+    vect3.push_back(new Point2D<int> (0,30));
+    vect3.push_back(new Point2D<int> (60,100));
+    vect3.push_back(new Point2D<int> (0,100));
 
-    cout << poly1 <<endl;
+    vector<Point2D<int>*> vect4;
+    vect4.push_back(new Point2D<int> (0,0));
+    vect4.push_back(new Point2D<int> (80,0));
+    vect4.push_back(new Point2D<int> (80,30));
+    vect4.push_back(new Point2D<int> (0,30));
 
-    poly1.translate(4, 5);
+    ZU zu = ZU(43, "Nolann", Polygone<int> (vect3), 55);
+    ZAU zau = ZAU(14, "Michel", Polygone<int> (vect2), 5);
+    ZN zn = ZN(67, "Louis", Polygone<int> (vect1));
+    ZA za = ZA(92, "Killian", Polygone<int> (vect4), "Boulgour");
 
-    cout << poly1 <<endl;
-
-    // Parcelle parc = Parcelle(4, "Nolann", poly1);
+    cout << zu;
+    cout << zau;
+    cout << zn;
+    cout << za;
     
     return 0;
 }
