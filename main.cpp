@@ -1,7 +1,3 @@
-#include "ZU.hpp"
-#include "ZAU.hpp"
-#include "ZA.hpp"
-#include "ZN.hpp"
 #include "Carte.hpp"
 
 
@@ -29,7 +25,7 @@ int main() {
     vect4.push_back(new Point2D<int> (80,30));
     vect4.push_back(new Point2D<int> (0,30));
 
-    ZU zu = ZU(43, "Nolann", Polygone<int> (vect3), 55);
+    ZU zu = ZU(43, "Nolann", Polygone<int> (vect3), 55, 500);
     ZAU zau = ZAU(14, "Michel", Polygone<int> (vect2), 5);
     ZN zn = ZN(67, "Louis", Polygone<int> (vect1));
     ZA za = ZA(92, "Killian", Polygone<int> (vect4), "Boulgour");
@@ -39,7 +35,7 @@ int main() {
     cout << zn;
     cout << za;
 
-    Carte c = Carte();
-    c.lectureFichier();
+    // Carte c = Carte();
+    // c.lectureFichier();
     return 0;
 }

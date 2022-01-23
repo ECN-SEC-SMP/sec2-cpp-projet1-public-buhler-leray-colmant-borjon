@@ -75,10 +75,6 @@ void Polygone<T>::addPoint(Point2D<T>* point){
 
 template <typename T>
 void Polygone<T>::translate(T x, T y){
-  // for(typename std::vector<Point2D<T>*>::iterator it = std::begin(this->sommets); it != std::end(this->sommets); ++it) {
-  //   *it.setX(*it.getX() + x);
-  //     *it.setY(*it.getY() + y);
-  // }
   for (auto& it : this->sommets)
     {
       it->setX(it->getX() + x);

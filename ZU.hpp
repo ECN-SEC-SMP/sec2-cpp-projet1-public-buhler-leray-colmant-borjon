@@ -2,14 +2,14 @@
 
 class ZU : public Constructible {
     public:
-        ZU(int num, string prop, Polygone<int> forme, int surface_constructible);
+        ZU(int num, string prop, Polygone<int> forme, int surface_constructible, int surface_construite);
         int surfaceConstructible() const;
         std::string getType() const;
         friend ostream& operator<< (ostream &, ZU const &);
 };
 
-ZU::ZU(int num, string prop, Polygone<int> forme, int surface_constructible) : Constructible(num, prop, forme, surface_constructible) {
-    this->surface_construite = 0;
+ZU::ZU(int num, string prop, Polygone<int> forme, int surface_constructible,  int surface_construite) : Constructible(num, prop, forme, surface_constructible) {
+    this->surface_construite = surface_construite;
 }
 
 int ZU::surfaceConstructible() const {

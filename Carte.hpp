@@ -39,42 +39,45 @@ void Carte::lectureFichier(){
   string delimiter = " ";
   vector<string> zone;
 
+  // 21:44, je viens de réaliser qu'il faut créer un vecteur de points, je n'aurais pas le temps de 
+  // finir ahah
+
   if (file.is_open()){
-    while(getline(file,line)) {
-      cout << line << endl;
-      //cout << line[0] << line[1]  << endl;
-      
+      // On lit les lignes une à une
+    while(getline(file,line)) {    
       while ((pos = line.find(delimiter)) != string::npos){
+        token = line.substr(0, pos);
         switch (line[1]) {
         case 'U':
           cout << "OK ZU" << endl;
-          ZU zu = ZU(zone[0], zone[1], zone[2], zone[3], zone[4]);
-          surfaceTotale+ = zu.getSurface();
-          parcelles.push_back(zu);
+        //   ZU zu = ZU(zone[0], zone[1], zone[2], zone[3], zone[4]);
+        //   this->surfaceTotale += zu.getSurface();
+        //   this->parcelles.push_back(zu);
           
           break;
         case 'A':
           if (line[2]=='U'){
-            cout << "OK ZAU" << endl;
-            Zau zau = ZAU(zone[0], zone[1], zone[2], zone[3]);
-            surfaceTotale+ = zau.getSurface();
-            parcelles.push_back(zau);
+            cout << "OK ZAU " << zone[1] << endl;
+            // ZAU zau = ZAU(zone[0], zone[1], zone[2], zone[3]);
+            // this->surfaceTotale += zau.getSurface();
+            // this->parcelles.push_back(zau);
           }
           else{
             cout << "OK ZA" << endl;
-            Za za = ZA(zone[0], zone[1], zone[2], zone[3]);
-            surfaceTotale+ = za.getSurface();
-            parcelles.push_back(za);
+            // ZA za = ZA(zone[0], zone[1], zone[2], zone[3]);
+            // this->surfaceTotale += za.getSurface();
+            // this->parcelles.push_back(za);
           }
           break;
         case 'N':
-            Zn zn = ZN(zone[0], zone[1], zone[2]);
-            surfaceTotale+ = zn.getSurface();
-            parcelles.push_back(zn);
+            // ZN zn = ZN(zone[0], zone[1], zone[2]);
+            // this->surfaceTotale += zn.getSurface();
+            // this->parcelles.push_back(zn);
           cout << "OK ZN" << endl;
           break;
         
-        default: cout << "coordonnées" << endl;
+        default: 
+            //cout << "coordonnées" << endl;
         break;
         }
         token = line.substr (0,pos);
@@ -103,9 +106,9 @@ void Carte::lectureFichier(){
 
       
     }
-    for (int j=0;j<zone.size();j++){
-          cout <<zone[j]<<' ' << endl;
-        }
+    // for (int j=0;j<zone.size();j++){
+    //       cout <<zone[j]<<' ' << endl;
+    //     }
 
       // Identifiez le type PARCELLE 
       //-> Itération en fct° du type

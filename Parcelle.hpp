@@ -86,9 +86,11 @@ void Parcelle::calculate_surface() {
     int surface = 0;
 
     std::size_t i = 0;
+    // Formule donnée dans l'énoncé
     for(i; i < forme.getSommets().size() - 1 ; ++i) {
         surface += (forme.getSommets()[i]->getX() * forme.getSommets()[i+1]->getY()) - (forme.getSommets()[i+1]->getX() * forme.getSommets()[i]->getY());
     }
+    // On gère la dernière itération
     surface += (forme.getSommets()[i]->getX() * forme.getSommets()[0]->getY()) - (forme.getSommets()[0]->getX() * forme.getSommets()[i]->getY());
     this->surface = surface / 2;
 }
