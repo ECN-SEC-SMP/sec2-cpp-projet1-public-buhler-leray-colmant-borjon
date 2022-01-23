@@ -2,6 +2,7 @@
 #include "ZAU.hpp"
 #include "ZA.hpp"
 #include "ZN.hpp"
+#include "Carte.hpp"
 
 
 int main() {
@@ -37,6 +38,8 @@ int main() {
     cout << zau;
     cout << zn;
     cout << za;
-    
+
+    Carte c = Carte();
+    c.lectureFichier();
     return 0;
 }

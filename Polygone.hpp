@@ -15,8 +15,8 @@ ostream& operator<<(ostream&, Polygone<T> const &);
 + Polygone(Polygone<T, S> poly)
 + getSommets( ) : Vector<Point2D<T>>
 + setSommets(Vector<Point2D<T>> listeSommets) : void + addPoint(Point2D<T>) : void
-+ translate(T x, T y) : void
-*/
++ translate(T x, T y) : void*/
+
 
 template <typename T>
 class Polygone {
